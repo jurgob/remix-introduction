@@ -22,6 +22,15 @@ export const links: LinksFunction = () => [
   },
 ];
 
+// export function ErrorBoundary() {
+//   const error = useRouteError() as any;
+  
+//   return <div>GLOBAL ERROR: {error.status }</div>
+//   // When NODE_ENV=production:
+//   // error.message = "Unexpected Server Error"
+//   // error.stack = undefined
+// }
+
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
