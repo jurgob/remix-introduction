@@ -4,6 +4,7 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useRouteError,
 } from "@remix-run/react";
 import type { LinksFunction } from "@remix-run/node";
 
@@ -22,14 +23,15 @@ export const links: LinksFunction = () => [
   },
 ];
 
-// export function ErrorBoundary() {
-//   const error = useRouteError() as any;
+export function ErrorBoundary() {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const error = useRouteError() as any;
   
-//   return <div>GLOBAL ERROR: {error.status }</div>
-//   // When NODE_ENV=production:
-//   // error.message = "Unexpected Server Error"
-//   // error.stack = undefined
-// }
+  return <div>GLOBAL ERROR: {error.status }</div>
+  // When NODE_ENV=production:
+  // error.message = "Unexpected Server Error"
+  // error.stack = undefined
+}
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (

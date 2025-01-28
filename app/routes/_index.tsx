@@ -19,7 +19,13 @@ export  const action = async() => {
 }
 
 
-
+export function ErrorBoundary() {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const error = useRouteError() as any;
+  
+  return <div>INDEX PAGE ERROR PAGE: {error.status }</div>
+  
+} 
 
 function MyComponent(props: {test: string}){
   console.log("YOLLOOOOOOO")
